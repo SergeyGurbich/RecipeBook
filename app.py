@@ -1,5 +1,4 @@
-'''Код для создания пробной базы данных с одной таблицей,
-с привязкой к учебному приложению арр - списку кулинарных рецептов'''
+'''Код приложения для записи и хранения кулинарных рецептов'''
 import datetime
 import sqlite3
 from sqlalchemy.exc import IntegrityError
@@ -44,7 +43,7 @@ with app.app_context():
         def check_password(self, password):
             return check_password_hash(self.password_hash, password)
 
-    #db.create_all()
+    db.create_all()
 '''    
 # Код для главной страницы, куда теперь нельзя попасть, т.к. после залогина - страница юзера
 @app.route('/')
