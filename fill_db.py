@@ -2,13 +2,14 @@
 и вообще для всяких экспериментов с кодом. В проекте не участвует.'''
 #import app
 from app import app, db, Recipy
+'''
 from werkzeug.security import generate_password_hash, check_password_hash
 a='simanw73'
 print(generate_password_hash(a))
-
-#with app.app_context():
-#    a=Recipy.query.get(10)
-#    print(a.title)
+'''
+with app.app_context():
+    a=Recipy.query.get(10)
+    print(a.title)
     #a.title='Неправильный салат с яйцом'
     #db.session.commit()
     #print(a)
