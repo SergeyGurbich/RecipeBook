@@ -182,5 +182,9 @@ def logout():
     logout_user()
     return redirect(url_for('login'))
 
+@app.route('/favicon.ico')
+def favicon():
+    return url_for('static', filename='favicon.ico')
+
 if __name__ == '__main__':
     app.run()
