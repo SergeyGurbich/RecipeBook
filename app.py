@@ -1,6 +1,6 @@
 '''Код приложения для записи и хранения кулинарных рецептов'''
 import datetime
-import sqlite3
+import os
 from sqlalchemy.exc import IntegrityError
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
@@ -10,8 +10,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "green"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///myDB.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///myDB.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///' + os.path.join(os.getcwd(), 'myDB.db')
 
 login_manager = LoginManager()
 login_manager.init_app(app)
